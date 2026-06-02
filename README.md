@@ -1,6 +1,6 @@
 # FreshActors — Reliable Apify Web Scrapers 🟢
 
-Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable** job boards.
+Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters** job boards.
 
 Every scraper here is:
 
@@ -22,6 +22,7 @@ This repo has copy-paste **Python, Node.js, and cURL** examples for every scrape
 | **Shopify App Store Scraper** | Shopify app details, reviews, and catalog discovery | `details` · `reviews` · `discover` | [freshactors/shopify-app-store-scraper](https://apify.com/freshactors/shopify-app-store-scraper) |
 | **Greenhouse & Lever Jobs Scraper** | Job postings normalized into one schema across Greenhouse + Lever ATS | `greenhouse` · `lever` · `auto` | [freshactors/greenhouse-lever-jobs-scraper](https://apify.com/freshactors/greenhouse-lever-jobs-scraper) |
 | **Workable Jobs Scraper** | Every role from a Workable company board, normalized — full descriptions in one call | `jobs` (per company) | [freshactors/workable-jobs-scraper](https://apify.com/freshactors/workable-jobs-scraper) |
+| **SmartRecruiters Jobs Scraper** | Every posting from a SmartRecruiters company board, normalized — full descriptions, no API key | `jobs` (per company) | [freshactors/smartrecruiters-jobs-scraper](https://apify.com/freshactors/smartrecruiters-jobs-scraper) |
 
 ## Quickstart
 
@@ -123,6 +124,13 @@ Every open role from a company's Workable board — with full descriptions — i
 
 ```jsonc
 { "companies": ["pearltalent", "https://apply.workable.com/walletconnect/"], "includeDescription": true }
+```
+
+### SmartRecruiters Jobs — [`examples/smartrecruiters/`](examples/smartrecruiters) · [store page](https://apify.com/freshactors/smartrecruiters-jobs-scraper)
+Every posting from a company's SmartRecruiters board — with full descriptions — normalized into the same schema as the Greenhouse, Lever, and Workable scrapers. No API key. Pass company identifiers or board URLs; set `includeDescription: false` for a fast list-only run.
+
+```jsonc
+{ "companies": ["visa", "https://jobs.smartrecruiters.com/Bosch"], "includeDescription": true }
 ```
 
 ## Use with AI agents (MCP)
