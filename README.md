@@ -1,6 +1,6 @@
 # FreshActors — Reliable Apify Web Scrapers 🟢
 
-Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever** job boards.
+Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable** job boards.
 
 Every scraper here is:
 
@@ -21,6 +21,7 @@ This repo has copy-paste **Python, Node.js, and cURL** examples for every scrape
 | **Redfin Scraper** | US real-estate listings & sold homes — price, beds, baths, sqft, lat/long, MLS ID | `listings` (city / zip / sold) | [freshactors/redfin-scraper](https://apify.com/freshactors/redfin-scraper) |
 | **Shopify App Store Scraper** | Shopify app details, reviews, and catalog discovery | `details` · `reviews` · `discover` | [freshactors/shopify-app-store-scraper](https://apify.com/freshactors/shopify-app-store-scraper) |
 | **Greenhouse & Lever Jobs Scraper** | Job postings normalized into one schema across Greenhouse + Lever ATS | `greenhouse` · `lever` · `auto` | [freshactors/greenhouse-lever-jobs-scraper](https://apify.com/freshactors/greenhouse-lever-jobs-scraper) |
+| **Workable Jobs Scraper** | Every role from a Workable company board, normalized — full descriptions in one call | `jobs` (per company) | [freshactors/workable-jobs-scraper](https://apify.com/freshactors/workable-jobs-scraper) |
 
 ## Quickstart
 
@@ -115,6 +116,13 @@ Job postings from **both** Greenhouse and Lever boards, normalized into one sche
 
 ```jsonc
 { "companies": ["gitlab", "https://jobs.lever.co/spotify"], "ats": "auto", "includeDescription": true }
+```
+
+### Workable Jobs — [`examples/workable/`](examples/workable) · [store page](https://apify.com/freshactors/workable-jobs-scraper)
+Every open role from a company's Workable board — with full descriptions — in one request, normalized into the same schema as the Greenhouse & Lever scraper. Pass shortcodes or board URLs.
+
+```jsonc
+{ "companies": ["pearltalent", "https://apply.workable.com/walletconnect/"], "includeDescription": true }
 ```
 
 ## Use with AI agents (MCP)
