@@ -12,7 +12,7 @@ import { ApifyClient } from 'apify-client';
 const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
 
 const run = await client.actor('freshactors/smartrecruiters-jobs-scraper').call({
-  companies: ['visa', 'https://jobs.smartrecruiters.com/Bosch'],
+  companies: ['visa', 'https://jobs.smartrecruiters.com/BoschGroup'],
   includeDescription: true,
   maxJobsPerCompany: 200,
 });

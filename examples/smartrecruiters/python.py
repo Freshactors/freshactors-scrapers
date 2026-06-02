@@ -13,7 +13,7 @@ from apify_client import ApifyClient
 client = ApifyClient(os.environ["APIFY_TOKEN"])
 
 run = client.actor("freshactors/smartrecruiters-jobs-scraper").call(run_input={
-    "companies": ["visa", "https://jobs.smartrecruiters.com/Bosch"],
+    "companies": ["visa", "https://jobs.smartrecruiters.com/BoschGroup"],
     "includeDescription": True,
     "maxJobsPerCompany": 200,
 })
