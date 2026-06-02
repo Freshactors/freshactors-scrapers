@@ -1,6 +1,6 @@
 # FreshActors — Reliable Apify Web Scrapers 🟢
 
-Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters** job boards.
+Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters / Recruitee** job boards.
 
 Every scraper here is:
 
@@ -23,6 +23,7 @@ This repo has copy-paste **Python, Node.js, and cURL** examples for every scrape
 | **Greenhouse & Lever Jobs Scraper** | Job postings normalized into one schema across Greenhouse + Lever ATS | `greenhouse` · `lever` · `auto` | [freshactors/greenhouse-lever-jobs-scraper](https://apify.com/freshactors/greenhouse-lever-jobs-scraper) |
 | **Workable Jobs Scraper** | Every role from a Workable company board, normalized — full descriptions in one call | `jobs` (per company) | [freshactors/workable-jobs-scraper](https://apify.com/freshactors/workable-jobs-scraper) |
 | **SmartRecruiters Jobs Scraper** | Every posting from a SmartRecruiters company board, normalized — full descriptions, no API key | `jobs` (per company) | [freshactors/smartrecruiters-jobs-scraper](https://apify.com/freshactors/smartrecruiters-jobs-scraper) |
+| **Recruitee Jobs Scraper** | Every posting from a Recruitee company board, normalized — full descriptions **+ salary**, one call, no API key | `jobs` (per company) | [freshactors/recruitee-jobs-scraper](https://apify.com/freshactors/recruitee-jobs-scraper) |
 
 ## Quickstart
 
@@ -131,6 +132,13 @@ Every posting from a company's SmartRecruiters board — with full descriptions 
 
 ```jsonc
 { "companies": ["visa", "https://jobs.smartrecruiters.com/BoschGroup"], "includeDescription": true }
+```
+
+### Recruitee Jobs — [`examples/recruitee/`](examples/recruitee) · [store page](https://apify.com/freshactors/recruitee-jobs-scraper)
+Every posting from a company's Recruitee board — with full descriptions **and salary** — in a single API call, normalized into the same schema as the Greenhouse, Lever, Workable, and SmartRecruiters scrapers. No API key. Pass company identifiers (the `{name}.recruitee.com` subdomain) or board URLs.
+
+```jsonc
+{ "companies": ["bunq", "https://channable.recruitee.com"], "includeDescription": true }
 ```
 
 ## Use with AI agents (MCP)
