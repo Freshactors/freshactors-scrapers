@@ -138,7 +138,7 @@ Every posting from a company's SmartRecruiters board — with full descriptions 
 Every posting from a company's Recruitee board — with full descriptions **and salary** — in a single API call, normalized into the same schema as the Greenhouse, Lever, Workable, and SmartRecruiters scrapers. No API key. Pass company identifiers (the `{name}.recruitee.com` subdomain) or board URLs.
 
 ```jsonc
-{ "companies": ["bunq", "https://channable.recruitee.com"], "includeDescription": true }
+{ "companies": ["channable", "https://bunq.recruitee.com"], "includeDescription": true }
 ```
 
 ## Use with AI agents (MCP)
