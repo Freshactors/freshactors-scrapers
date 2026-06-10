@@ -1,6 +1,6 @@
 # FreshActors — Reliable Apify Web Scrapers 🟢
 
-Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters / Recruitee** job boards.
+Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters / Recruitee / Teamtailor / Personio** job boards.
 
 Every scraper here is:
 
@@ -24,6 +24,8 @@ This repo has copy-paste **Python, Node.js, and cURL** examples for every scrape
 | **Workable Jobs Scraper** | Every role from a Workable company board, normalized — full descriptions in one call | `jobs` (per company) | [freshactors/workable-jobs-scraper](https://apify.com/freshactors/workable-jobs-scraper) |
 | **SmartRecruiters Jobs Scraper** | Every posting from a SmartRecruiters company board, normalized — full descriptions, no API key | `jobs` (per company) | [freshactors/smartrecruiters-jobs-scraper](https://apify.com/freshactors/smartrecruiters-jobs-scraper) |
 | **Recruitee Jobs Scraper** | Every posting from a Recruitee company board, normalized — full descriptions **+ salary**, one call, no API key | `jobs` (per company) | [freshactors/recruitee-jobs-scraper](https://apify.com/freshactors/recruitee-jobs-scraper) |
+| **Teamtailor Jobs Scraper** | Every posting from a Teamtailor career site (Nordic/EU scale-ups), normalized — full board + descriptions in one call | `jobs` (per company) | [freshactors/teamtailor-jobs-scraper](https://apify.com/freshactors/teamtailor-jobs-scraper) |
+| **Personio Jobs Scraper** | Every posting from a Personio career portal (DACH SMBs), normalized — **departments + seniority** + full descriptions | `jobs` (per company) | [freshactors/personio-jobs-scraper](https://apify.com/freshactors/personio-jobs-scraper) |
 
 ## Quickstart
 
@@ -139,6 +141,20 @@ Every posting from a company's Recruitee board — with full descriptions **and 
 
 ```jsonc
 { "companies": ["channable", "https://bunq.recruitee.com"], "includeDescription": true }
+```
+
+### Teamtailor Jobs — [`examples/teamtailor/`](examples/teamtailor) · [store page](https://apify.com/freshactors/teamtailor-jobs-scraper)
+Every posting from a company's Teamtailor career site — Teamtailor is the ATS of choice for Nordic and European scale-ups. One request returns the **full published board with descriptions**; custom-domain career sites work too. Same normalized schema as the other five jobs scrapers.
+
+```jsonc
+{ "companies": ["polestar", "https://oatly.teamtailor.com"], "includeDescription": true }
+```
+
+### Personio Jobs — [`examples/personio/`](examples/personio) · [store page](https://apify.com/freshactors/personio-jobs-scraper)
+Every posting from a company's Personio career portal — the ATS standard of the German-speaking SMB market. Uniquely exposes **department and seniority** on virtually every posting, plus labeled description sections and an optional feed `language`. Same normalized schema as the other five jobs scrapers.
+
+```jsonc
+{ "companies": ["teamative", "https://lanch.jobs.personio.de"], "includeDescription": true }
 ```
 
 ## Use with AI agents (MCP)
