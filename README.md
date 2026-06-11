@@ -1,6 +1,6 @@
 # FreshActors — Reliable Apify Web Scrapers 🟢
 
-Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters / Recruitee / Teamtailor / Personio** job boards.
+Production-ready, **always-fresh** web scrapers on the [Apify Store](https://apify.com/freshactors) for the data sources teams actually need — the **Apple App Store**, **Google Play**, the **Microsoft Store**, the **VS Code Marketplace**, **Redfin** real estate, the **Shopify App Store**, and **Greenhouse / Lever / Workable / SmartRecruiters / Recruitee / Teamtailor / Personio** job boards.
 
 Every scraper here is:
 
@@ -18,6 +18,8 @@ This repo has copy-paste **Python, Node.js, and cURL** examples for every scrape
 |---|---|---|---|
 | **App Store Scraper** | iOS app details, keyword search & rankings, customer reviews | `details` · `search` · `reviews` | [freshactors/app-store-scraper](https://apify.com/freshactors/app-store-scraper) |
 | **Google Play Scraper** | Android app details, ratings histogram, reviews, keyword search | `details` · `reviews` · `search` | [freshactors/google-play-scraper](https://apify.com/freshactors/google-play-scraper) |
+| **Microsoft Store Scraper** | Windows app details with 7/30-day rating windows, search, reviews with helpful votes — any country market | `details` · `search` · `reviews` | [freshactors/microsoft-store-scraper](https://apify.com/freshactors/microsoft-store-scraper) |
+| **VS Code Marketplace Scraper** | Extension details with install counts + trending stats, keyword/category search, reviews | `details` · `search` · `reviews` | [freshactors/vscode-marketplace-scraper](https://apify.com/freshactors/vscode-marketplace-scraper) |
 | **Redfin Scraper** | US real-estate listings & sold homes — price, beds, baths, sqft, lat/long, MLS ID | `listings` (city / zip / sold) | [freshactors/redfin-scraper](https://apify.com/freshactors/redfin-scraper) |
 | **Shopify App Store Scraper** | Shopify app details, reviews, and catalog discovery | `details` · `reviews` · `discover` | [freshactors/shopify-app-store-scraper](https://apify.com/freshactors/shopify-app-store-scraper) |
 | **Greenhouse & Lever Jobs Scraper** | Job postings normalized into one schema across Greenhouse + Lever ATS | `greenhouse` · `lever` · `auto` | [freshactors/greenhouse-lever-jobs-scraper](https://apify.com/freshactors/greenhouse-lever-jobs-scraper) |
@@ -99,6 +101,20 @@ Android app details with the ratings histogram, installs, and developer response
 
 ```jsonc
 { "mode": "details", "appIds": ["com.spotify.music"], "country": "us", "lang": "en" }
+```
+
+### Microsoft Store — [`examples/microsoft-store/`](examples/microsoft-store) · [store page](https://apify.com/freshactors/microsoft-store-scraper)
+Windows app details with **all-time + 7-day + 30-day rating windows** (a momentum signal Apple/Google don't expose), Store search, and customer reviews with **helpful votes and device family** — for any country `market`.
+
+```jsonc
+{ "mode": "details", "productIds": ["9NKSQGP7F2NH", "9NCBCSZSJRSB", "9WZDNCRFJ3TJ"] }
+```
+
+### VS Code Marketplace — [`examples/vscode-marketplace/`](examples/vscode-marketplace) · [store page](https://apify.com/freshactors/vscode-marketplace-scraper)
+Extension records with **install counts, ratings, and trending velocity scores**, keyword/category search sortable by installs or rating, and the newest user reviews — the extension-market intelligence layer the Marketplace doesn't ship.
+
+```jsonc
+{ "mode": "search", "category": "Data Science", "sortBy": "installs", "maxSearchResults": 25 }
 ```
 
 ### Redfin — [`examples/redfin/`](examples/redfin) · [store page](https://apify.com/freshactors/redfin-scraper)
