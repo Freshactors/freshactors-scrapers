@@ -8,6 +8,6 @@ set -euo pipefail
 curl -s -X POST \
   "https://api.apify.com/v2/acts/freshactors~smartrecruiters-jobs-scraper/run-sync-get-dataset-items?token=${APIFY_TOKEN}" \
   -H "Content-Type: application/json" \
-  -d '{"companies":["visa"],"includeDescription":true,"maxJobsPerCompany":200}'
+  -d '{"companies":["BoschGroup"],"includeDescription":true,"maxJobsPerCompany":25}'
 
 # companies = SmartRecruiters identifiers or jobs.smartrecruiters.com board URLs.

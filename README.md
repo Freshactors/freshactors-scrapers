@@ -149,7 +149,7 @@ Every open role from a company's Workable board — with full descriptions — i
 Every posting from a company's SmartRecruiters board — with full descriptions — normalized into the same schema as the Greenhouse, Lever, and Workable scrapers. No API key. Pass company identifiers or board URLs; set `includeDescription: false` for a fast list-only run.
 
 ```jsonc
-{ "companies": ["visa", "https://jobs.smartrecruiters.com/BoschGroup"], "includeDescription": true }
+{ "companies": ["BoschGroup"], "includeDescription": true }
 ```
 
 ### Recruitee Jobs — [`examples/recruitee/`](examples/recruitee) · [store page](https://apify.com/freshactors/recruitee-jobs-scraper)

@@ -13,9 +13,9 @@ from apify_client import ApifyClient
 client = ApifyClient(os.environ["APIFY_TOKEN"])
 
 run = client.actor("freshactors/smartrecruiters-jobs-scraper").call(run_input={
-    "companies": ["visa", "https://jobs.smartrecruiters.com/BoschGroup"],
+    "companies": ["BoschGroup"],
     "includeDescription": True,
-    "maxJobsPerCompany": 200,
+    "maxJobsPerCompany": 25,
 })
 
 for item in client.dataset(run["defaultDatasetId"]).iterate_items():
